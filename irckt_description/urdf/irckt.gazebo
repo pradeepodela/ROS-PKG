@@ -1,0 +1,311 @@
+<?xml version="1.0" ?>
+<robot name="irckt" xmlns:xacro="http://www.ros.org/wiki/xacro" >
+
+<xacro:property name="body_color" value="Gazebo/Silver" />
+<xacro:property name="yellow_color" value="Gazebo/Yellow" />
+<xacro:property name="black_color" value="Gazebo/DarkGrey" />
+<xacro:property name="dark_grey_color" value="Gazebo/Grey" />
+
+<gazebo>
+  <plugin filename="libgazebo_ros_control.so" name="gazebo_ros_control">
+    <robotNamespace>/irckt</robotNamespace>
+    <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+    <legacyModeNS>true</legacyModeNS>
+  </plugin>
+</gazebo>
+
+<gazebo>
+  <plugin name="skid_steer_drive_controller" filename="libgazebo_ros_skid_steer_drive.so">
+    <updateRate>100.0</updateRate>
+    <robotNamespace>/</robotNamespace>
+    <leftFrontJoint>motor_fl</leftFrontJoint>
+    <rightFrontJoint>motor_fr</rightFrontJoint>
+    <leftRearJoint>motor_bl</leftRearJoint>
+    <rightRearJoint>motor_br</rightRearJoint>
+    <wheelSeparation>0.140820</wheelSeparation>
+    <wheelDiameter>0.065</wheelDiameter>
+    <robotBaseFrame>base_link</robotBaseFrame>
+    <torque>5</torque>
+    <topicName>/cmd_vel</topicName>
+    <broadcastTF>false</broadcastTF>
+  </plugin>
+</gazebo>
+
+<gazebo reference="base_link">
+  <material>${body_color}</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>false</selfCollide>
+  <gravity>true</gravity>
+</gazebo>
+
+<gazebo reference="motor_gearbox_fr_1">
+  <material>${yellow_color}</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>false</selfCollide>
+</gazebo>
+
+<gazebo reference="motor_fr_1">
+  <material>${dark_grey_color}</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>false</selfCollide>
+</gazebo>
+
+<gazebo reference="motor_cap_fr_1">
+  <material>${black_color}</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>false</selfCollide>
+</gazebo>
+
+<gazebo reference="motor_tip_fr_1">
+  <material>${body_color}</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>false</selfCollide>
+</gazebo>
+
+<gazebo reference="motor_shaft_fr_1">
+  <material>${body_color}</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>false</selfCollide>
+</gazebo>
+
+<gazebo reference="wheel_rim_fr_1">
+  <material>${yellow_color}</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>false</selfCollide>
+</gazebo>
+
+<gazebo reference="wheel_tyre_fr_1">
+  <material>${black_color}</material>
+  <mu1>10</mu1>
+  <mu2>10</mu2>
+  <selfCollide>false</selfCollide>
+</gazebo>
+
+<gazebo reference="motor_gearbox_br_1">
+  <material>${yellow_color}</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>false</selfCollide>
+</gazebo>
+
+<gazebo reference="motor_br_1">
+  <material>${dark_grey_color}</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>false</selfCollide>
+</gazebo>
+
+<gazebo reference="motor_cap_br_1">
+  <material>${black_color}</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>false</selfCollide>
+</gazebo>
+
+<gazebo reference="motor_tip_br_1">
+  <material>${body_color}</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>false</selfCollide>
+</gazebo>
+
+<gazebo reference="motor_shaft_br_1">
+  <material>${body_color}</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>false</selfCollide>
+</gazebo>
+
+<gazebo reference="wheel_rim_br_1">
+  <material>${yellow_color}</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>false</selfCollide>
+</gazebo>
+
+<gazebo reference="wheel_tyre_br_1">
+  <material>${black_color}</material>
+  <mu1>10</mu1>
+  <mu2>10</mu2>
+  <selfCollide>false</selfCollide>
+</gazebo>
+
+<gazebo reference="motor_gearbox_bl_1">
+  <material>${yellow_color}</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>false</selfCollide>
+</gazebo>
+
+<gazebo reference="motor_bl_1">
+  <material>${dark_grey_color}</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>false</selfCollide>
+</gazebo>
+
+<gazebo reference="motor_cap_bl_1">
+  <material>${black_color}</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>false</selfCollide>
+</gazebo>
+
+<gazebo reference="motor_tip_bl_1">
+  <material>${body_color}</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>false</selfCollide>
+</gazebo>
+
+<gazebo reference="motor_shaft_bl_1">
+  <material>${body_color}</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>false</selfCollide>
+</gazebo>
+
+<gazebo reference="wheel_rim_bl_1">
+  <material>${yellow_color}</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>false</selfCollide>
+</gazebo>
+
+<gazebo reference="wheel_tyre_bl_1">
+  <material>${black_color}</material>
+  <mu1>10</mu1>
+  <mu2>10</mu2>
+  <selfCollide>false</selfCollide>
+</gazebo>
+
+<gazebo reference="motor_gearbox_fl_1">
+  <material>${yellow_color}</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>false</selfCollide>
+</gazebo>
+
+<gazebo reference="motor_fl_1">
+  <material>${dark_grey_color}</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>false</selfCollide>
+</gazebo>
+
+<gazebo reference="motor_cap_fl_1">
+  <material>${black_color}</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>false</selfCollide>
+</gazebo>
+
+<gazebo reference="motor_tip_fl_1">
+  <material>${body_color}</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>false</selfCollide>
+</gazebo>
+
+<gazebo reference="motor_shaft_fl_1">
+  <material>${body_color}</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>false</selfCollide>
+</gazebo>
+
+<gazebo reference="wheel_rim_fl_1">
+  <material>${yellow_color}</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>false</selfCollide>
+</gazebo>
+
+<gazebo reference="wheel_tyre_fl_1">
+  <material>${black_color}</material>
+  <mu1>10</mu1>
+  <mu2>10</mu2>
+  <selfCollide>false</selfCollide>
+</gazebo>
+
+<gazebo reference="dead_weight_1">
+  <material>${black_color}</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>false</selfCollide>
+</gazebo>
+
+<gazebo reference="lift_servo_1">
+  <material>${black_color}</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>false</selfCollide>
+</gazebo>
+
+<gazebo reference="lift_link_1">
+  <material>${body_color}</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>false</selfCollide>
+</gazebo>
+
+<gazebo reference="gripper_servo_1">
+  <material>${black_color}</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>false</selfCollide>
+</gazebo>
+
+<gazebo reference="finger_left_1">
+  <material>${body_color}</material>
+  <mu1>1000</mu1>
+  <mu2>1000</mu2>
+  <selfCollide>false</selfCollide>
+</gazebo>
+
+<gazebo reference="finger_right_1">
+  <material>${body_color}</material>
+  <mu1>1000</mu1>
+  <mu2>1000</mu2>
+  <selfCollide>false</selfCollide>
+</gazebo>
+
+<gazebo reference="motor_finger_left">
+    <implicitSpringDamper>1</implicitSpringDamper>
+</gazebo>
+
+<gazebo reference="motor_finger_right">
+    <implicitSpringDamper>1</implicitSpringDamper>
+</gazebo>
+
+<!-- <gazebo reference="motor_lift">
+    <implicitSpringDamper>1</implicitSpringDamper>
+</gazebo>
+ -->
+
+<!-- <gazebo>
+  <plugin name="gazebo_grasp_fix" filename="libgazebo_grasp_fix.so">
+    <arm>
+      <arm_name></arm_name>
+      <palm_link> lift_link_1 </palm_link>
+      <gripper_link> finger_left_1 </gripper_link>
+      <gripper_link> finger_right_1 </gripper_link>
+    </arm>
+    <forces_angle_tolerance>100</forces_angle_tolerance>
+    <update_rate>10</update_rate>
+    <grip_count_threshold>3</grip_count_threshold>
+    <max_grip_count>10</max_grip_count>
+    <release_tolerance>0.001</release_tolerance>
+    <disable_collisions_on_attach>false</disable_collisions_on_attach>
+    <contact_topic>__default_topic__</contact_topic>
+  </plugin>
+</gazebo> -->
+
+</robot>

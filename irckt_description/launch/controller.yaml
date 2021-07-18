@@ -1,0 +1,19 @@
+irckt:
+  # Publish all joint states -----------------------------------
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 50
+
+  # Position Controllers --------------------------------------
+  # motor_lift_position_controller:
+  #   type: effort_controllers/JointPositionController
+  #   joint: motor_lift
+  #   pid: {p: 4.0, i: 0.0, d: 2.0}
+  motor_finger_left_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: motor_finger_left
+    pid: {p: 1.0, i: 0.0, d: 1.5}
+  motor_finger_right_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: motor_finger_right
+    pid: {p: 1.0, i: 0.0, d: 1.5}

@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<robot name="irckt" xmlns:xacro="http://www.ros.org/wiki/xacro" >
+
+<!-- <transmission name="motor_lift_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="motor_lift">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="motor_lift_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission> -->
+
+<transmission name="motor_finger_left_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="motor_finger_left">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="motor_finger_left_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="motor_finger_right_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="motor_finger_right">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="motor_finger_right_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+</robot>
